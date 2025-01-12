@@ -24,3 +24,35 @@ importScripts(
       ],
     })
   );
+
+  // Precaching static assets
+workbox.precaching.precacheAndRoute([
+  { url: '/', revision: '1' }, // Cache the main page
+  { url: '/index.html', revision: '1' },
+  { url: '/style.css', revision: '1' },
+  { url: '/main.js', revision: '1' },
+  { url: '/manifest.json', revision: '1' },
+  { url: '/icons/icon-192x192.png', revision: '1' },
+  { url: '/icons/icon-512x512.png', revision: '1' },
+]);
+
+workbox.routing.registerRoute(
+  ({ request }) => request.mode === 'navigate',
+  new workbox.strategies.NetworkFirst({
+    cacheName: 'html-cache',
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 10,
+      }),
+    ],
+  })
+);
+
+// Fallback for offline navigation
+self.addEventListener('fetch', (event) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      caches.match('/index.html').then((response) => response || fetch(event.request))
+    );
+  }
+});
