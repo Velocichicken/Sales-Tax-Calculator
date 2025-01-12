@@ -6,7 +6,7 @@
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
-    "start_url": "/repository/",
+    "start_url": "/Sales-Tax-Calculator/",
     "icons": [{
         "src": "'/Sales-Tax-Calculator/icons/manifest-icon-192.maskable.png",
         "sizes": "192x192",

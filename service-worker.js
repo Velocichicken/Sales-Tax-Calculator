@@ -7,8 +7,8 @@ workbox.precaching.precacheAndRoute([
   { url: '/style.css', revision: '1' },
   { url: '/main.js', revision: '1' },
   { url: '/manifest.json', revision: '1' },
-  { url: '/icons/manifest-icon-192.maskable.png', revision: '1' },
-  { url: '/icons/manifest-icon-512.maskable.png', revision: '1' },
+  { url: '/Sales-Tax-Calculator/icons/manifest-icon-192.maskable.png', revision: '1' },
+  { url: '/Sales-Tax-Calculator/icons/manifest-icon-512.maskable.png', revision: '1' },
 ]);
 
 // Cache assets for offline usage
