@@ -1,0 +1,69 @@
+
+html, body {
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+    height: 100%; /* Ensure the entire viewport has a height */
+    margin: 0;
+    padding: 0;
+}
+head {-webkit-tap-highlight-color: transparent;}
+.Removebutton
+{
+    margin: 1%;
+    font-size: 150%;
+    border-color: transparent;
+    background-color: lightcoral;
+    width: 98%;
+    height: 5%;
+}
+
+
+h1
+{
+    text-align: center;
+    margin-top: 0%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    background-color: lightgreen;
+}
+
+.ItemDisplay
+{
+    resize: none; display: block; width: 100%; height: 25%;;
+    font-size: large;
+}
+
+.TotalDisplay
+{
+    resize: none; width: 100%; height: 10%;;
+    font-size: xx-large;
+}
+
+
+
+.Removebutton:active
+{
+    background-color: rgb(126, 66, 66);
+}
+
+input
+{
+    font-size: large;
+    height: 4vh;
+}
+
+.lebutton
+{
+    position: relative;
+    top: 3.4vh;
+    height: 8vh;
+    border-color: transparent;
+    background-color: #90ee90;
+    width: 44%;
+}
+
+.lebutton:active
+{
+    background-color:  rgb(87, 145, 87);
+}

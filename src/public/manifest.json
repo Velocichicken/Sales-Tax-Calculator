@@ -1,0 +1,24 @@
+{
+    "name": "Sales Tax Calulator",
+    "short_name": "Tax Calulator",
+    "theme_color": "#90ee90",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [{
+        "src": "/icons/manifest-icon-192.maskable.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "perpouse": "maskable any"
+        },
+        {
+            "src": "icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "/image/png",
+            "perpouse": "maskable any"
+        }
+
+    ]
+  }

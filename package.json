@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "expres": "^0.0.5",
+    "pwa-asset-generator": "^6.4.0"
+  }
+}
