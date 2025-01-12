@@ -10,6 +10,7 @@ const totalDisplay = document.getElementById('TotalDisplay');
 itemNameInput.setAttribute("placeholder", "Enter Item Name");
 itemPriceInput.setAttribute("placeholder", "Enter Item Price");
 
+const require = Node.require;
 
 let itemNames = [];
 let itemPrices = [];
