@@ -6,7 +6,7 @@
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
-    "start_url": "/index.html",
+    "start_url": "/repository/",
     "icons": [{
         "src": "/icons/manifest-icon-192.maskable.png",
         "sizes": "192x192",
