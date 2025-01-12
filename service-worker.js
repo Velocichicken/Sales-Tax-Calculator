@@ -1,5 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
+
+
 // Precaching essential assets
 workbox.precaching.precacheAndRoute([
   { url: '/Sales-Tax-Calculator/', revision: '1' }, // Cache the main page
@@ -100,7 +102,6 @@ self.addEventListener('install', (event) => {
         '/Sales-Tax-Calculator/manifest.json',
         '/Sales-Tax-Calculator/icons/manifest-icon-192.maskable.png',
         '/Sales-Tax-Calculator/icons/manifest-icon-512.maskable.png',
-        '/Sales-Tax-Calculator/offline.html',
       ])
     )
   );
