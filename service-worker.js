@@ -97,7 +97,7 @@ self.addEventListener('install', (event) => {
       { url: '/index.html', revision: '1' },
       { url: '/style.css', revision: '1' },
       { url: '/main.js', revision: '1' },
-      { url: '/manifest.json', revision: '1' },
+      { url: './manifest.json', revision: '1' },
       { url: '/icons/manifest-icon-192.maskable.png', revision: '1' },
       { url: '/icons/manifest-icon-512.maskable.png', revision: '1' },
       { url: '/offline.html', revision: '1' },  // Add offline fallback page here
