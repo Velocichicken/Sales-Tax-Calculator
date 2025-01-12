@@ -10,7 +10,7 @@ const totalDisplay = document.getElementById('TotalDisplay');
 itemNameInput.setAttribute("placeholder", "Enter Item Name");
 itemPriceInput.setAttribute("placeholder", "Enter Item Price");
 
-const require = Node.require;
+
 
 let itemNames = [];
 let itemPrices = [];
@@ -18,14 +18,6 @@ let itemPrices = [];
 let tax = 0.10;
 
 
-const express = require('express')
-const app = express()
-
-app.use(express.static("./src"))
-
-app.listen(3000, ()=>{
-    console.log("ready")
-})
 
 
 enterItemButton.onclick = function()
