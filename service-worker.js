@@ -2,11 +2,11 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox
 
 // Precaching essential assets
 workbox.precaching.precacheAndRoute([
-  { url: '/', revision: '1' }, // Cache the main page
-  { url: '/index.html', revision: '1' },
-  { url: '/style.css', revision: '1' },
-  { url: '/main.js', revision: '1' },
-  { url: '/manifest.json', revision: '1' },
+  { url: '/Sales-Tax-Calculator/', revision: '1' }, // Cache the main page
+  { url: '/Sales-Tax-Calculator/index.html', revision: '1' },
+  { url: '/Sales-Tax-Calculator/style.css', revision: '1' },
+  { url: '/Sales-Tax-Calculator/main.js', revision: '1' },
+  { url: '/Sales-Tax-Calculator/manifest.json', revision: '1' },
   { url: '/Sales-Tax-Calculator/icons/manifest-icon-192.maskable.png', revision: '1' },
   { url: '/Sales-Tax-Calculator/icons/manifest-icon-512.maskable.png', revision: '1' },
 ]);
@@ -92,16 +92,17 @@ self.addEventListener('fetch', (event) => {
 // Install event: Cache assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    workbox.precaching.precacheAndRoute([
-      { url: '/', revision: '1' },
-      { url: '/index.html', revision: '1' },
-      { url: '/style.css', revision: '1' },
-      { url: '/main.js', revision: '1' },
-      { url: './manifest.json', revision: '1' },
-      { url: '/icons/manifest-icon-192.maskable.png', revision: '1' },
-      { url: '/icons/manifest-icon-512.maskable.png', revision: '1' },
-      { url: '/offline.html', revision: '1' },  // Add offline fallback page here
-    ])
+    caches.open('static-assets').then((cache) =>
+      cache.addAll([
+        '/Sales-Tax-Calculator/index.html',
+        '/Sales-Tax-Calculator/style.css',
+        '/Sales-Tax-Calculator/main.js',
+        '/Sales-Tax-Calculator/manifest.json',
+        '/Sales-Tax-Calculator/icons/manifest-icon-192.maskable.png',
+        '/Sales-Tax-Calculator/icons/manifest-icon-512.maskable.png',
+        '/Sales-Tax-Calculator/offline.html',
+      ])
+    )
   );
 });
 
