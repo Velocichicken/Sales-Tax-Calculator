@@ -77,21 +77,32 @@ workbox.routing.registerRoute(
 
 // Fallback for offline access
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        // Cache the successful network response
-        const clonedResponse = response.clone();
-        caches.open('my-cache').then((cache) => cache.put(event.request, clonedResponse));
-        return response;
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match('/Sales-Tax-Calculator/index.html');
       })
-      .catch(() => {
-        // Return cached response or offline fallback
-        return caches.match(event.request).then((cachedResponse) => {
-          return cachedResponse || caches.match('/Sales-Tax-Calculator/index.html');
-        });
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        return (
+          cachedResponse ||
+          fetch(event.request)
+            .then((response) => {
+              // Cache successful responses
+              const clonedResponse = response.clone();
+              caches.open('dynamic-cache').then((cache) => cache.put(event.request, clonedResponse));
+              return response;
+            })
+            .catch(() => {
+              // Optional: Provide a fallback for other types of requests
+              return caches.match('/Sales-Tax-Calculator/index.html');
+            })
+        );
       })
-  );
+    );
+  }
 });
 
 // Install event: Cache essential assets
@@ -112,12 +123,13 @@ self.addEventListener('install', (event) => {
 
 // Activate event: Clean up old caches
 self.addEventListener('activate', (event) => {
-  const cacheWhitelist = ['static-assets', 'image-assets', 'html-assets', 'splash-images', 'manifest-cache'];
+  const cacheWhitelist = ['static-assets', 'image-assets', 'html-assets', 'splash-images', 'manifest-cache', 'dynamic-cache'];
   event.waitUntil(
     caches.keys().then((cacheNames) =>
       Promise.all(
         cacheNames.map((cacheName) => {
           if (!cacheWhitelist.includes(cacheName)) {
+            console.log(`Deleting old cache: ${cacheName}`);
             return caches.delete(cacheName);
           }
         })
