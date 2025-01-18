@@ -1,5 +1,12 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
+new WorkboxWebpackPlugin({
+  
+  modifyUrlPrefix: {
+    '/': '//'
+  },
+})
+
 // Precaching essential assets
 workbox.precaching.precacheAndRoute([
   { url: '/Sales-Tax-Calculator/', revision: '1' },
