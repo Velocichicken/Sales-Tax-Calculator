@@ -1,11 +1,16 @@
 const itemNameInput = document.getElementById('ItemNameInput');
 const itemPriceInput = document.getElementById('ItemPriceInput');
 
+
+const userpercemt = document.getElementById("TaxPercent")
+
 const enterItemButton = document.getElementById('lebutton');
 const removeItemButton = document.getElementById('RemoveButton');
 
 const itemDisplay = document.getElementById('ItemDisplay');
 const totalDisplay = document.getElementById('TotalDisplay');
+
+
 
 itemNameInput.setAttribute("placeholder", "Enter Item Name");
 itemPriceInput.setAttribute("placeholder", "Enter Item Price");
@@ -45,6 +50,10 @@ removeItemButton.onclick = function()
 
 function calculate()
 {
+    if (userpercemt.textContent != "")
+        {
+            tax = parseFloat(userpercemt.textContent)/100
+        }
     let total = 0
     for (i in itemPrices)
         {
