@@ -31,7 +31,7 @@ h1
 
 .ItemDisplay
 {
-    resize: none; display: block; width: 100%; height: 25%;;
+    resize: none; display: block; width: 100%; height: 50vh;;
     font-size: large;
 }
 
