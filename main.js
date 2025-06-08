@@ -2,7 +2,7 @@ const itemNameInput = document.getElementById('ItemNameInput');
 const itemPriceInput = document.getElementById('ItemPriceInput');
 
 
-const userpercemt = document.getElementById("TaxPercent")
+let userpercemt = document.getElementById("TaxPercent")
 
 const enterItemButton = document.getElementById('lebutton');
 const removeItemButton = document.getElementById('RemoveButton');
@@ -51,6 +51,7 @@ removeItemButton.onclick = function()
 userpercemt.onchange = function()
 {
     calculate();
+    console.log(userpercemt)
 }
 
 function calculate()
