@@ -48,6 +48,11 @@ removeItemButton.onclick = function()
     calculate();
 }
 
+userpercemt.onchange = function()
+{
+    calculate();
+}
+
 function calculate()
 {
     if (userpercemt.textContent != "")
