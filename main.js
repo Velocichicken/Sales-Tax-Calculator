@@ -51,7 +51,7 @@ removeItemButton.onclick = function()
 userpercemt.onchange = function()
 {
     calculate();
-    console.log(userpercemt)
+    console.log(userpercemt.textContent)
 }
 
 function calculate()
