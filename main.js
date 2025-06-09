@@ -51,14 +51,14 @@ removeItemButton.onclick = function()
 userpercemt.onchange = function()
 {
     calculate();
-    console.log(userpercemt.textContent)
+    
 }
 
 function calculate()
 {
-    if (userpercemt.textContent != "")
+    if (userpercemt.value != "")
         {
-            tax = parseFloat(userpercemt.textContent)/100
+            tax = parseFloat(userpercemt.value)/100
         }
     let total = 0
     for (i in itemPrices)
